@@ -1,0 +1,243 @@
+/**********************************************************************************************************
+ * Universidad Nacional Arturo Jauretche                                                                  *
+ * Aplicaciones Moviles 2018                                                                              *
+ * Profesor: Ing Suarez, Matías                                                                           *
+ * Alumno: Rosatto Daniel                                                                                 *
+ * Trabajo integrador 1: Módulo I Web móvil                                                               *
+ * Daniel Rosatto                                                                                         *         
+ * Archivo: integrador1.css                                                                               *
+ **********************************************************************************************************/
+html body{ 
+    padding: 0%;
+    margin: 0%;
+}
+
+[class*="col-"] {
+    width: 100%;
+}
+
+/* Mobile first: */
+@media only screen and (max-width: 768px) {
+    html body header.col-12 div.col-9{
+        background-image: url("../img/layout/logo.png");
+        background-size:100% 100%;
+    }
+
+    /* Clase que oculta elementos dom a media mobile */
+    body .notMobileShow {
+        display:none;
+    }
+
+    .listaGen{/* nav menu mobile */
+        width: 22%;
+        padding-inline-start: 5%;
+        padding-inline-end: 5%;
+        float: left;
+    }
+}
+
+ /* Pantallas mayores o iguales a 768 pixeles*/
+@media only screen and (min-width: 767px) {
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+
+    .listaGen{/* nav menu desktop */
+        width: 90%;
+        padding-inline-start: 5%;
+        padding-inline-end: 5%;
+        float: left;
+    }
+    
+}
+
+input[type=button] {
+    background-color: #fff2be;
+    border-color: #fff2be;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Estilos del encabezado */
+html body header.col-12{
+    float: left;
+    background: linear-gradient(#fff2be,#36d1c4);
+}
+html body header div.col-9{
+    float: left;
+}
+html body header img{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+html body header h1{
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    }
+
+/* Estilos del menu */
+html body nav.col-12.menu {
+    float:left; 
+    text-align: center;
+    vertical-align: middle;
+    background: #36d1c4;
+}
+
+html body nav.col-12.menu ul.menu_ul li{
+    padding: 3%;
+    float:left;
+}
+html body nav.col-12.menu ul.menu_ul li:hover a{
+    background: linear-gradient(#a0eecc,#36d1c4);/* fondo del menu mouseover */
+}
+body nav.col-3 {
+    float:left; 
+    text-align: center;
+    vertical-align: middle;
+    background-color: #36d1c4; /* Fondo del menu */
+}
+body nav.col-3 ul.menu_ul { 
+    list-style-type: none;
+    float: left;
+    margin: 0;
+    padding-top: 0%;
+    padding-right: 0%;
+    padding-bottom: 2%;
+    padding-left: 0%;
+    width: 100%;
+}
+html body nav#tmdbNav.col-3.menu ul.menu_ul li:hover {
+    background: #fff2be; /* fondo del menu mouseover */
+}
+
+input#selGenButt{
+    width: 97%;
+    margin-inline-start: 1.5%;
+    margin-inline-end: 1.5%;
+    margin-bottom: 1.5%;
+}
+
+.radio{
+    display: none;
+}
+
+/* Estilos del contenido */
+.buscador{
+    padding: 2%;
+}
+html body section#cont1.col-12{
+    background: #a0eecc;
+    float: left;
+}
+
+html body section#cont1.col-12.prods div.col-12 div.col-12 div.col-2 {
+    float: left;
+    padding: 1%;
+} 
+.clickImage{
+    width: 100%;
+    height: auto;
+}
+
+html body section#cont1.col-12 div#enc1.col-12{
+    float: left;
+    text-align: center;
+}
+html body section#cont1.col-9{
+    background: #a0eecc;
+    float: left;
+}
+body section.col-9 {
+    float: left;
+}
+
+body section div.col-5.floatProd {
+    float:left;
+    padding: 0.5%;
+    margin: 0.5%;
+}
+.floatProd p{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.showmovie {
+    width: 50%;
+    float:left;
+}
+input.send{
+    width: -moz-min-content;
+    padding: 0;
+    margin: 0;
+}
+
+.floatProd div.showmovie img{
+    float:left;
+    width: 90%; 
+    height: auto;
+    padding: 5%;
+}
+.floatProd div.col-6{
+    float:left;
+}
+.floatProd div.col-6{
+    float: left;
+}
+html body section#cont1.col-12 div#enc1.col-12 form.col-6{
+    float: left;
+}
+html body section#cont1.col-12 div#enc1.col-12 div#imgEml.col-5{
+    float: left;
+}
+
+/* Estilos del mapa */
+#map { 
+    width: 100%;
+    height: 580px;
+    box-shadow: 5px 5px 5px #f6318c;
+}
+
+
+/* Estilos del pie de página */
+html footer{
+    float: left;
+    background: linear-gradient(#a0eecc,#f6318c);
+    padding-left: 4.13%;
+    padding-right: 4.13%;
+    width: 91.66%;
+}
+html footer #footCol1{
+    float: left;
+    width: 48%;
+    padding-left: 2%;
+}
+html footer #footCol3{
+    float: left;
+    text-align: right;
+    width: 48%;
+    padding-right: 2%;
+}
+
+#footCol3 > small:nth-child(1) > a:nth-child(1){
+    color: black;
+}
+
+html body footer#footer1 div#footCol3 small a address{
+    width: -moz-min-content;
+    float: right;
+}
+html body footer#footer1 div#footCol3 small a{
+    text-decoration: none;
+}
