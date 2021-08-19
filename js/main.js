@@ -8,7 +8,7 @@
   * Archivo main.js                                                                                     *
   **********************************************************************************************************/
 $(document).ready(function main(){
-    share= new TextValider("https://www.w3c.org",//url
+    share= new TextValider("www.w3c.org",//url
         "html body section#cont1.col-12 div#enc1.col-12 div#imgEml.col-5");
       }
   );
