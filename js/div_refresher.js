@@ -1,3 +1,3 @@
 function refreshDiv() {
-    $("resultado").html("<h1>Hello, World!</h1>");
+    $("#resultado").replaceWith("<h1>Hello, World!</h1>");
 }
