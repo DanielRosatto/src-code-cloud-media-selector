@@ -1,4 +1,5 @@
-function refreshDiv(html) {
-    var div = document.getElementById('resultado');
-    div.innerHTML = html;
+function refreshDiv() {
+    $("resultado").click(function(){
+        $("#pageTitle").html("<h1>Hello, World!</h1>");
+    });
   }
