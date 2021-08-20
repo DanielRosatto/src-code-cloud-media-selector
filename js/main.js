@@ -8,6 +8,6 @@
   * Archivo main.js                                                                                     *
   **********************************************************************************************************/
 $(document).ready(function main(){
-      $("div#resultado").replaceWith("<h1>Hello, World!</h1>");
+      new DivRefresher();
     }
   );
