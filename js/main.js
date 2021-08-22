@@ -9,7 +9,7 @@
   **********************************************************************************************************/
 $(document).ready(function main(){
       refresher=new DivRefresher("div#resultado");
-      vid=new ProviderMedia();
+      var vid=new ProviderMedia();
       refresher.changeFor(vid.getMediaContent());
     }
   );
