@@ -8,6 +8,8 @@
   * Archivo main.js                                                                                     *
   **********************************************************************************************************/
 $(document).ready(function main(){
-      new DivRefresher();
+      refresher=new DivRefresher("div#resultado");
+      vid=new ProviderMedia();
+      refresher.changeFor(vid.getMediaContent());
     }
   );
