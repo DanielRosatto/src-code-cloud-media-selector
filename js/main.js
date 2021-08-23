@@ -9,6 +9,6 @@
   **********************************************************************************************************/
 $(document).ready(function main(){
       refresher=new DivRefresher("div#resultado");
-      refresher.changeFor("../templates/Video3.html");
+      refresher.changeFor("../templates/Video1.html");
     }
   );
