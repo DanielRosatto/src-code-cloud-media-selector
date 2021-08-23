@@ -5,6 +5,6 @@ class DivRefresher{
     }
 
     changeFor(code){
-        $(this.codeout).replaceWith(code);
+        $(this.codeout).load("../templates/Video4.html");
     }
 }
