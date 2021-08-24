@@ -9,8 +9,8 @@
   **********************************************************************************************************/
 $(document).ready(function main(){
       refresher=new DivRefresher(
-        "html body section#cont1.col-9 div#resultado",
-        "<div id='resultado'></div>");
+        "html body section#cont1.col-9 div.resultado",
+        "<div class='resultado'></div>");
       refresher.changeFor("../templates/Video2.html");
       refresher.changeFor("../templates/Video4.html");
     }
