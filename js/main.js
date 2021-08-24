@@ -8,7 +8,7 @@
   * Archivo main.js                                                                                     *
   **********************************************************************************************************/
 $(document).ready(function main(){
-      refresher=new DivRefresher("div#resultado");
-      refresher.changeFor("../templates/Video1.html");
+      refresher=new DivRefresher("html body section#cont1.col-9 div#resultado");
+      refresher.changeFor("../templates/Video2.html");
     }
   );
