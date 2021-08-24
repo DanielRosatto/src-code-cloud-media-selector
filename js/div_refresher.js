@@ -1,8 +1,8 @@
 class DivRefresher{
-    constructor(elem,initcode){
+    constructor(elem){
         this.codeout=elem;
-        this.initcode=initcode;
-        /* $(this.codeout).replaceWith("<div class='resultado'><h1>Hello, World!</h1></div>"); */
+        /*this.initcode=initcode;
+         $(this.codeout).replaceWith("<div class='resultado'><h1>Hello, World!</h1></div>"); */
     }
 
     changeFor(code){
