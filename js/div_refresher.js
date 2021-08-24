@@ -6,7 +6,7 @@ class DivRefresher{
     }
 
     changeFor(code){
-        $(this.codeout).replaceWith(this.initcode);
+        $(this.codeout).empty();
         $(this.codeout).load(code);
     }
 }

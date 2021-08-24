@@ -12,5 +12,6 @@ $(document).ready(function main(){
         "html body section#cont1.col-9 div#resultado",
         "<div id='resultado'></div>");
       refresher.changeFor("../templates/Video2.html");
+      refresher.changeFor("../templates/Video4.html");
     }
   );
