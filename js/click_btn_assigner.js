@@ -7,6 +7,7 @@
  * Archivo click_btn_assigner.js                                                                                     *
  **********************************************************************************************************/
 class ClickBtnAssigner{
+
     constructor(elem1,elem2,elem3,elem4){
         this.btn1=elem1;
         this.btn2=elem2;
@@ -15,7 +16,7 @@ class ClickBtnAssigner{
     }
 
     onClickBtn1(refresher){
-        $(this.btn1).bind("click", function(e) {
+        $(this.btn1).click(function(e) {
             refresher.changeFor("../templates/Video1.html");
         });
     }
@@ -25,6 +26,7 @@ class ClickBtnAssigner{
             refresher.changeFor("../templates/Video2.html");
         });
     }
+
     onClickBtn3(refresher){
         $(this.btn3).bind("click", function(e) {
             refresher.changeFor("../templates/Video3.html");
@@ -36,4 +38,5 @@ class ClickBtnAssigner{
             refresher.changeFor("../templates/Video4.html");
         });
     }
+
 }
