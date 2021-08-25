@@ -14,18 +14,26 @@ class ClickBtnAssigner{
         this.btn4=elem4;
     }
 
-    onClickBtn1(code){
-        $(this.btn1).click(code);
+    onClickBtn1(refresher){
+        $(this.btn1).bind("click", function(e) {
+            refresher.changeFor("../templates/Video1.html");
+        });
     }
 
-    onClickBtn2(code){
-        $(this.btn2).click(code);
+    onClickBtn2(refresher){
+        $(this.btn2).bind("click", function(e) {
+            refresher.changeFor("../templates/Video2.html");
+        });
     }
-    onClickBtn3(code){
-        $(this.btn3).click(code);
+    onClickBtn3(refresher){
+        $(this.btn3).bind("click", function(e) {
+            refresher.changeFor("../templates/Video3.html");
+        });
     }
 
-    onClickBtn4(code){
-        $(this.btn4).click(code);
+    onClickBtn4(refresher){
+        $(this.btn4).bind("click", function(e) {
+            refresher.changeFor("../templates/Video4.html");
+        });
     }
 }
