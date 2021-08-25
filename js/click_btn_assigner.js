@@ -7,7 +7,7 @@
  * Archivo click_btn_assigner.js                                                                                     *
  **********************************************************************************************************/
 class ClickBtnAssigner{
-    constructor(elem1,elemm2,elemm3,elem4){
+    constructor(elem1,elem2,elem3,elem4){
         this.btn1=elem1;
         this.btn2=elem2;
         this.btn3=elem3;
