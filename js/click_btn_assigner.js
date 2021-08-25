@@ -22,19 +22,19 @@ class ClickBtnAssigner{
     }
 
     onClickBtn2(refresher){
-        $(this.btn2).bind("click", function(e) {
+        $(this.btn2).click(function(e) {
             refresher.changeFor("../templates/Video2.html");
         });
     }
 
     onClickBtn3(refresher){
-        $(this.btn3).bind("click", function(e) {
+        $(this.btn3).click(function(e) {
             refresher.changeFor("../templates/Video3.html");
         });
     }
 
     onClickBtn4(refresher){
-        $(this.btn4).bind("click", function(e) {
+        $(this.btn4).click(function(e) {
             refresher.changeFor("../templates/Video4.html");
         });
     }
