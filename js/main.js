@@ -14,9 +14,9 @@ $(document).ready(function main(){
       asigner = new ClickBtnAssigner('.btn-video1','.btn-video2','.btn-video3','.btn-video4');
 
       refresher.changeFor("../templates/Video4.html");
-      asigner.onClickBtn1(refresher.changeFor("../templates/Video1.html")));
-      asigner.onClickBtn2(refresher.changeFor("../templates/Video2.html")));
-      asigner.onClickBtn3(refresher.changeFor("../templates/Video3.html")));
-      asigner.onClickBtn4(refresher.changeFor("../templates/Video4.html")));
+      asigner.onClickBtn1(refresher.changeFor("../templates/Video1.html"));
+      asigner.onClickBtn2(refresher.changeFor("../templates/Video2.html"));
+      asigner.onClickBtn3(refresher.changeFor("../templates/Video3.html"));
+      asigner.onClickBtn4(refresher.changeFor("../templates/Video4.html"));
     }
   );
