@@ -14,9 +14,14 @@ $(document).ready(function main(){
       asigner = new ClickBtnAssigner($('.btn-video'));
 
       refresher.changeFor("../templates/Video4.html");
-      asigner.onClickBtn(refresher,0,"../templates/Video1.html");
-      asigner.onClickBtn(refresher,1,"../templates/Video2.html");
-      asigner.onClickBtn(refresher,2,"../templates/Video3.html");
-      asigner.onClickBtn(refresher,3,"../templates/Video4.html");
+      asigner.onClickBtn(
+        refresher,
+        [
+          "../templates/Video1.html",
+          "../templates/Video2.html",
+          "../templates/Video3.html",
+          "../templates/Video4.html"
+        ]
+      );
     }
   );
