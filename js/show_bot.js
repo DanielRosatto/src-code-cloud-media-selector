@@ -21,7 +21,8 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        video1.addEventListener('timeupdate', context.setTime(video1));
+        const media = document.querySelector('video');
+        media.addEventListener('timeupdate', context.setTime(media));
         video1.ontimeupdate = function() {
             console.log("Prueba de bot");
             console.log(video1.currentTime);
