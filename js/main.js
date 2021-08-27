@@ -29,6 +29,7 @@ $(document).ready(function main(){
         "html body section#cont1.col-9 div.widget-show-bot", 
         7
       );
-      
+      bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
+
     }
   );
