@@ -10,9 +10,6 @@ class ClickBtnAssigner{
 
     constructor(elems){
         this.btns=elems;
-        this.btn2=elem2;
-        this.btn3=elem3;
-        this.btn4=elem4;
     }
 
     onClickBtn(refresher,index,file){
