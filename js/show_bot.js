@@ -22,11 +22,5 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        context.viveoelem.on("pause", function (e) {
-            console.log("Video paused. Current time of videoplay: " + e.target.currentTime );
-          });    }
-
-    setTime(){
-        console.log("Prueba de setTime()"+media.currentTime);
     }
 }

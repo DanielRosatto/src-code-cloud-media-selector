@@ -7,9 +7,18 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-  const media = document.getElementsById("founded-show-bot");
+  $(document).ready(function main(){
 
- $(document).ready(function main(){
+      $("#founded-show-bot").on('play', function() {
+        //Actions when video play selected
+        console.log("Reproduciendo..")
+      });
+
+      $("#founded-show-bot").on('pause', function() {
+        //Actions when video play selected
+        console.log("En pausa..")
+      });
+      
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
