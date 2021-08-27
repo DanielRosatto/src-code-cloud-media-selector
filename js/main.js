@@ -31,12 +31,12 @@
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
 
-      document.querySelector("#founded-show-bot").on('play', function() {
+      $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('play', function() {
         //Actions when video play selected
         console.log("Reproduciendo..");
       });
 
-      document.querySelector("#founded-show-bot").on('pause', function() {
+      $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('pause', function() {
         //Actions when video play selected
         console.log("En pausa..");
       });
