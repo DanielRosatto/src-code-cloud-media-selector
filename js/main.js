@@ -43,3 +43,6 @@
 
     }
   );
+
+  var vid = document.getElementById("founded-show-bot");
+  alert(vid.paused);
