@@ -21,10 +21,15 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
+        video1.addEventListener('timeupdate', context.setTime(video1));
         video1.ontimeupdate = function() {
             console.log("Prueba de bot");
             console.log(video1.currentTime);
             context.codeout.innerHTML=video1.currentTime;
         };  
+    }
+
+    setTime(vid){
+        console.log("Prueba de setTime()"+vid.currentTime);
     }
 }
