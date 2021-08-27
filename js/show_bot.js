@@ -20,7 +20,7 @@
     showSuggestAt(seconds,array_files){
         let context=this;
         let video1=$(context.video_to_listen);
-        video1.addEventListener(
+        video1.on(
                 'timeupdate',
                 function(ev){
                   let i=0;
