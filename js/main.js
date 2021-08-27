@@ -9,12 +9,12 @@
   **********************************************************************************************************/
   $(document).ready(function main(){
 
-      $("#founded-show-bot").on('play', function() {
+      document.querySelector("#founded-show-bot").on('play', function() {
         //Actions when video play selected
         console.log("Reproduciendo..")
       });
 
-      $("#founded-show-bot").on('pause', function() {
+      document.querySelector("#founded-show-bot").on('pause', function() {
         //Actions when video play selected
         console.log("En pausa..")
       });
