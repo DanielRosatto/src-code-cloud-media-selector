@@ -22,13 +22,9 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        media.addEventListener('timeupdate', this.setTime);
-        video1.ontimeupdate = function() {
-            console.log("Prueba de bot");
-            console.log(video1.currentTime);
-            context.codeout.innerHTML=video1.currentTime;
-        };  
-    }
+        video1.on("pause", function (e) {
+            console.log("Video paused. Current time of videoplay: " + e.target.currentTime );
+          });    }
 
     setTime(){
         console.log("Prueba de setTime()"+media.currentTime);
