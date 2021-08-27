@@ -4,7 +4,7 @@
  * Autor: Rosatto Daniel                                                                                  *
  * Prueba para Proyecto Animaciones                                                                       *
  * Laboraorio 215                                                                                         *
- * Archivo click_btn_assigner.js                                                                                     *
+ * Archivo click_btn_assigner.js                                                                          *
  **********************************************************************************************************/
 class ClickBtnAssigner{
 

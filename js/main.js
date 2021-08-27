@@ -11,7 +11,7 @@ $(document).ready(function main(){
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
-      asigner = new ClickBtnAssigner(['.btn-video1','.btn-video2','.btn-video3','.btn-video4']);
+      asigner = new ClickBtnAssigner($('.btn-video'));
 
       refresher.changeFor("../templates/Video4.html");
       asigner.onClickBtn(refresher,0,"../templates/Video1.html");
