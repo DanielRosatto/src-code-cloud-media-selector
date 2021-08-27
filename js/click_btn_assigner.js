@@ -17,6 +17,8 @@ class ClickBtnAssigner{
       files.forEach(function eachFile(file){
         $(this.btns[index++]).click(function(e) {
             refresher.changeFor(file);
-        });
+        }
+      );
     }
+  }
 }
