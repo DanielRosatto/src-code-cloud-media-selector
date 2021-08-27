@@ -14,8 +14,9 @@ class ClickBtnAssigner{
 
     onClickBtn(refresher,files){
       let index=0;
+      let context=this;
       files.forEach(function eachFile(file){
-        $(this.btns[index++]).click(
+        $(context.btns[index++]).click(
           function(e) {
             refresher.changeFor(file);
           }
