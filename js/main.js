@@ -11,12 +11,12 @@ $(document).ready(function main(){
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
-      asigner = new ClickBtnAssigner('.btn-video1','.btn-video2','.btn-video3','.btn-video4');
+      asigner = new ClickBtnAssigner(['.btn-video1','.btn-video2','.btn-video3','.btn-video4']);
 
       refresher.changeFor("../templates/Video4.html");
-      asigner.onClickBtn1(refresher);
-      asigner.onClickBtn2(refresher);
-      asigner.onClickBtn3(refresher);
-      asigner.onClickBtn4(refresher);
+      asigner.onClickBtn(refresher,1,"../templates/Video1.html");
+      asigner.onClickBtn(refresher,2,"../templates/Video2.html");
+      asigner.onClickBtn(refresher,3,"../templates/Video3.html");
+      asigner.onClickBtn(refresher,4,"../templates/Video4.html");
     }
   );
