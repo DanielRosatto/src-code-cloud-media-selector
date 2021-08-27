@@ -22,7 +22,7 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        video1.on("pause", function (e) {
+        context.viveoelem.on("pause", function (e) {
             console.log("Video paused. Current time of videoplay: " + e.target.currentTime );
           });    }
 
