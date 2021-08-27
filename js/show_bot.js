@@ -18,9 +18,10 @@
     }
 
     showSuggestAt(seconds,array_files){
-        let context=this;
-        let video1=$(context.video_to_listen);
+        var context=this;
+        var video1=$(context.video_to_listen);
         video1.ontimeupdate = function() {
+            console.log("Prueba de bot");
             console.log(video1.currentTime);
             context.codeout.innerHTML=video1.currentTime;
         };  
