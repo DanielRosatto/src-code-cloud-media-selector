@@ -22,7 +22,7 @@
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        this.viveoelem.addEventListener('timeupdate', this.setTime);
+        media.addEventListener('timeupdate', this.setTime);
         video1.ontimeupdate = function() {
             console.log("Prueba de bot");
             console.log(video1.currentTime);
