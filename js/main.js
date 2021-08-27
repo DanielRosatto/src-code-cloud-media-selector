@@ -23,5 +23,12 @@ $(document).ready(function main(){
           "../templates/Video4.html"
         ]
       );
+
+      bot=new ShowBot(
+        "html body section#cont1.col-9 div.resultado video.col-9",
+        "html body section#cont1.col-9 div.widget-show-bot", 
+        7
+      );
+      
     }
   );
