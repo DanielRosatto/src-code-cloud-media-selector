@@ -7,7 +7,7 @@
  * Archivo show_bot.js                                                                                    *
  **********************************************************************************************************/
  class ShowBot{
-    constructor(elem_video_show, elem_out, timefadeout,videoelem){
+    constructor(elem_video_show, elem_out, timefadeout){
         this.video_to_listen=elem_video_show;
         this.codeout=elem_out;
         this.timefadeout=timefadeout;
@@ -15,7 +15,6 @@
             "html body section#cont1.col-9 div.widget-show-bot"
             );
         this.asigner = new ClickBtnAssigner($('.btn-show-bot'));
-        this.viveoelem = videoelem;
     }
 
     showSuggestAt(seconds,array_files){

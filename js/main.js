@@ -18,7 +18,7 @@
         //Actions when video play selected
         console.log("En pausa..")
       });
-      
+
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
@@ -38,8 +38,7 @@
       bot=new ShowBot(
         "#founded-show-bot",
         "html body section#cont1.col-9 div.widget-show-bot",
-        7,
-        media
+        7
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
 
