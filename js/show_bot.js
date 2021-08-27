@@ -8,8 +8,8 @@
  **********************************************************************************************************/
  class ShowBot{
     constructor(elem_video_show, elem_out, timefadeout){
-        this.codeout=elem_out;
         this.video_to_listen=elem_video_show;
+        this.codeout=elem_out;
         this.timefadeout=timefadeout;
         this.changer = new DivRefresher(
             "html body section#cont1.col-9 div.widget-show-bot"
@@ -20,13 +20,9 @@
     showSuggestAt(seconds,array_files){
         let context=this;
         let video1=$(context.video_to_listen);
-        video1.ontimeupdate = function(video1) {myFunction(video1)};
-        console.log(video1.currentTime);
+        video1.ontimeupdate = function() {
+            console.log(video1.currentTime);
+            context.codeout.innerHTML=video1.currentTime;
+        };  
     }
 }
-
-function myFunction(vid) {
-    // Display the current position of the video in a p element with id="demo"
-    document.getElementByClass("widget-show-bot").innerHTML = vid.currentTime;
-  }
-  
