@@ -19,8 +19,9 @@
 
     showSuggestAt(seconds,array_files){
         let context=this;
-        $(context.video_to_listen).addEventListener(
-                "timeupdate",
+        let video1=$(context.video_to_listen);
+        video1.addEventListener(
+                'timeupdate',
                 function(ev){
                   let i=0;
                   var repr=$(context.video_to_listen).currentTime.getTime()/1000;
