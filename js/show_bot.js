@@ -20,7 +20,8 @@
     showSuggestAt(seconds,array_files){
         let context=this;
         let video1=$(context.video_to_listen);
-        video1.ontimeupdate = function() {myFunction(video1)};
+        video1.ontimeupdate = function(video1) {myFunction(video1)};
+        console.log(video1.currentTime);
     }
 }
 
