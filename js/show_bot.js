@@ -20,23 +20,12 @@
     showSuggestAt(seconds,array_files){
         let context=this;
         let video1=$(context.video_to_listen);
-        video1.on(
-                'timeupdate',
-                function(ev){
-                  let i=0;
-                  var repr=$(context.video_to_listen).currentTime.getTime()/1000;
-                  if ( seconds < repr && repr < (seconds+context.timefadeout) ) {
-                      if ($(context.codeout).is(':empty')){
-                            context.changer.changeFor("../templates/show_bot_widget.html");
-                            array_files.forEach(function eachFile(item){
-                                context.asigner.onClickBtn(context.changer,i++,item)
-                          })
-                      }
-
-                  }
-                  else $(context.codeout).empty();
-                },
-           true
-        );
+        video1.ontimeupdate = function() {myFunction(video1)};
     }
 }
+
+function myFunction(vid) {
+    // Display the current position of the video in a p element with id="demo"
+    document.getElementByClass("widget-show-bot").innerHTML = vid.currentTime;
+  }
+  
