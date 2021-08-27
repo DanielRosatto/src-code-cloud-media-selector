@@ -7,7 +7,7 @@
  * Archivo show_bot.js                                                                                    *
  **********************************************************************************************************/
  class ShowBot{
-    constructor(elem_video_show, elem_out, timefadeout){
+    constructor(elem_video_show, elem_out, timefadeout,videoelem){
         this.video_to_listen=elem_video_show;
         this.codeout=elem_out;
         this.timefadeout=timefadeout;
@@ -15,13 +15,14 @@
             "html body section#cont1.col-9 div.widget-show-bot"
             );
         this.asigner = new ClickBtnAssigner($('.btn-show-bot'));
+        this.viveoelem = videoelem;
     }
 
     showSuggestAt(seconds,array_files){
         var context=this;
         var video1=$(context.video_to_listen);
         console.log("Prueba de showSuggestAt");
-        video1.bind('timeupdate', context.setTime(video1));
+        this.viveoelem.addEventListener('timeupdate', this.setTime);
         video1.ontimeupdate = function() {
             console.log("Prueba de bot");
             console.log(video1.currentTime);
@@ -29,7 +30,7 @@
         };  
     }
 
-    setTime(vid){
-        console.log("Prueba de setTime()"+vid.currentTime);
+    setTime(){
+        console.log("Prueba de setTime()"+media.currentTime);
     }
 }

@@ -7,7 +7,9 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-$(document).ready(function main(){
+  const media = document.querySelector('video');
+
+ $(document).ready(function main(){
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
@@ -26,8 +28,9 @@ $(document).ready(function main(){
 
       bot=new ShowBot(
         "#founded-show-bot",
-        "html body section#cont1.col-9 div.widget-show-bot", 
-        7
+        "html body section#cont1.col-9 div.widget-show-bot",
+        7,
+        media
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
 
