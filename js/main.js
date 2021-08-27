@@ -8,17 +8,6 @@
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
   $(document).ready(function main(){
-
-      document.querySelector("#founded-show-bot").on('play', function() {
-        //Actions when video play selected
-        console.log("Reproduciendo..")
-      });
-
-      document.querySelector("#founded-show-bot").on('pause', function() {
-        //Actions when video play selected
-        console.log("En pausa..")
-      });
-
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
@@ -41,6 +30,16 @@
         7
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
+
+      document.querySelector("#founded-show-bot").on('play', function() {
+        //Actions when video play selected
+        console.log("Reproduciendo..");
+      });
+
+      document.querySelector("#founded-show-bot").on('pause', function() {
+        //Actions when video play selected
+        console.log("En pausa..");
+      });
 
     }
   );
