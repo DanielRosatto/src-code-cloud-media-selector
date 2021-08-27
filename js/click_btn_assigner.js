@@ -15,10 +15,12 @@ class ClickBtnAssigner{
     onClickBtn(refresher,files){
       let index=0;
       files.forEach(function eachFile(file){
-        $(this.btns[index++]).click(function(e) {
+        $(this.btns[index++]).click(
+          function(e) {
             refresher.changeFor(file);
-        }
+          }
+        );
+      }
       );
     }
-  }
 }
