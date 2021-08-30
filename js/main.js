@@ -7,7 +7,7 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-  $(document).ready(function main(){
+  $(document).ready(function main(document){
       refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
@@ -30,7 +30,8 @@
         7
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
-
+      
+      if (asigner.)
       $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('play', function() {
         //Actions when video play selected
         console.log("Reproduciendo..");
@@ -41,8 +42,15 @@
         console.log("En pausa..");
       });
 
+      var vid = document.getElementById("founded-show-bot");
+
+      while (vid.paused) {
+        console.log('video pausado...');
+      }
+
     }
   );
 
-  var vid = document.getElementById("founded-show-bot");
-  alert(vid.paused);
+  function getVideo(){
+    return document._video;
+  }
