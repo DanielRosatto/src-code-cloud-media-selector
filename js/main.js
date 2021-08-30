@@ -29,25 +29,7 @@
         "html body section#cont1.col-9 div.widget-show-bot",
         7
       );
-      bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
       
-      $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('play', function() {
-        //Actions when video play selected
-        console.log("Reproduciendo..");
-      });
-
-      $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('pause', function() {
-        //Actions when video play selected
-        console.log("En pausa..");
-      });
-
-      while (getVideo().paused) {
-        console.log('video pausado...');
-      }
-
+      bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
     }
   );
-
-  function getVideo(){
-    return document._video;
-  }

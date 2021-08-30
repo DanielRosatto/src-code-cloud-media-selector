@@ -20,6 +20,6 @@
     showSuggestAt(seconds,array_files){
         var context=this;
         var video1=$(context.video_to_listen);
-        console.log("Prueba de showSuggestAt");
+        console.debug("Prueba de showSuggestAt, elemento:"+video1);
     }
 }
