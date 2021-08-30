@@ -41,9 +41,7 @@
         console.log("En pausa..");
       });
 
-      var vid = getVideo();
-
-      while (vid.paused) {
+      while (getVideo().paused) {
         console.log('video pausado...');
       }
 
