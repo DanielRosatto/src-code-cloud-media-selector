@@ -10,6 +10,7 @@ class ClickBtnAssigner{
 
     constructor(elems){
         this.btns=elems;
+        this.all_assigned=0;
     }
 
     onClickBtn(refresher,files){
@@ -23,5 +24,8 @@ class ClickBtnAssigner{
         );
       }
       );
+      this.all_assigned=index;
     }
+
+
 }

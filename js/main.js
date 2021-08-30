@@ -31,7 +31,6 @@
       );
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
       
-      if (asigner.)
       $("html body section#cont1.col-9 div.resultado video#founded-show-bot.col-9").on('play', function() {
         //Actions when video play selected
         console.log("Reproduciendo..");
@@ -42,7 +41,7 @@
         console.log("En pausa..");
       });
 
-      var vid = document.getElementById("founded-show-bot");
+      var vid = getVideo();
 
       while (vid.paused) {
         console.log('video pausado...');
