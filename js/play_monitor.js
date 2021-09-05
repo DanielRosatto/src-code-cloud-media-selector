@@ -20,7 +20,7 @@ $(document).ready(function main(document){
     
     function myFunction() {
       // Display the current position of the video in a p element with id="demo"
-      document.getElementById("demo").innerHTML = vid.currentTime;
+      $("#demo").innerHTML = vid.currentTime;
     }
     
   }
