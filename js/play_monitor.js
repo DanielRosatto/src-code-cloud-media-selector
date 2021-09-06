@@ -6,7 +6,8 @@ $(document).ready(function main(){
 
       function myFunction() {
         // Display the current position of the video in a p element with id="demo"
-        $("d#emo").innerHTML = vid.currentTime;
+        $("#demo").innerHTML = vid.currentTime;
+        console.log('en ontimeupdate: '+vid.currentTime);
       }
     }
   );
