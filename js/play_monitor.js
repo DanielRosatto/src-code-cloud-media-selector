@@ -1,5 +1,5 @@
 $(document).ready(function main(){
-      var vid = $("#myVideo");
+      var vid = document.getElementById("myVideo");
       console.log('después de document.ready '+vid.currentTime);
 
       // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
