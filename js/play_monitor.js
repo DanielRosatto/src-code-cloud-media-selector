@@ -1,16 +1,12 @@
 $(document).ready(function main(){
-    console.log('antes de document.ready '+vid.currentTime);
-      
-    $(document).ready(function() {
+      console.log('después de document.ready '+vid.currentTime);
 
-      $(document).ready(function() {
-          console.log('dentro de un segundo document.ready '+vid.currentTime);
-      });
+      // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+      vid.ontimeupdate = function() {myFunction()};
 
-      console.log('dentro de document.ready '+vid.currentTime);
-    });
-
-    console.log('después de document.ready '+vid.currentTime);
-    
-  }
-);
+      function myFunction() {
+        // Display the current position of the video in a p element with id="demo"
+        $("d#emo").innerHTML = vid.currentTime;
+      }
+    }
+  );
