@@ -28,11 +28,13 @@
       );
 
       bot=new ShowBot(
-        "#founded-show-bot",
+        playVideo,
         "html body section#cont1.col-9 div.widget-show-bot",
         7
       );
-      
+     
+      console.debug("Prueba de main, elemento:"+playVideo.currentTime);
+
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
     }
   );

@@ -18,6 +18,6 @@
     }
 
     showSuggestAt(seconds,array_files){
-        console.debug("Prueba de showSuggestAt, elemento:"+playVideo.currentTime);
+        console.debug("Prueba de showSuggestAt, elemento:"+this.video_to_listen.currentTime);
     }
 }
