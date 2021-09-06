@@ -8,8 +8,8 @@
  **********************************************************************************************************/
  class ShowBot{
     constructor(elem_video_show, elem_out, timefadeout){
-        this.video_to_listen=$(elem_video_show);
-        this.codeout=$(elem_out);
+        this.video_to_listen=elem_video_show;
+        this.codeout=elem_out;
         this.timefadeout=timefadeout;
         this.changer = new DivRefresher(
             "html body section#cont1.col-9 div.widget-show-bot"
@@ -18,6 +18,6 @@
     }
 
     showSuggestAt(seconds,array_files){
-        console.debug("Prueba de showSuggestAt, elemento:"+this.video_to_listen.currentTime);
+        console.debug("Prueba de showSuggestAt, elemento:"+playVideo.currentTime);
     }
 }
