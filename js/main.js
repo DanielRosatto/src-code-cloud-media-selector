@@ -33,8 +33,8 @@
         7
       );
      
-      console.debug("Prueba de main, elemento:"+playVideo.currentTime);
-
       bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
+
+      playVideo.ontimeupdate = function() {bot.myFunction()};
     }
   );

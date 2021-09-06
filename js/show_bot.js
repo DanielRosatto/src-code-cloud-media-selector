@@ -20,4 +20,12 @@
     showSuggestAt(seconds,array_files){
         console.debug("Prueba de showSuggestAt, elemento:"+this.video_to_listen.currentTime);
     }
+
+    myFunction() {
+        // Display the current position of the video in a p element with id="demo"
+        $(this.codeout).empty();
+        $(this.codeout).text(this.video_to_listen.currentTime);
+        console.log('en ontimeupdate: '+this.video_to_listen.currentTime);
+    }
+
 }
