@@ -3,8 +3,8 @@ $(document).ready(function main(){
       function myFunction() {
         // Display the current position of the video in a p element with id="demo"
         $("#demo").empty();
-        $("#demo").text(vid.currentTime);
-        console.log('en ontimeupdate: '+vid.currentTime);
+        $("#demo").text(x.currentTime);
+        console.log('en ontimeupdate: '+x.currentTime);
       }
 
       // Get the video element with id="myVideo"
