@@ -18,8 +18,8 @@
     }
 
     showSuggestAt(seconds,array_files){
-        var context=this;
-        var video1=$(context.video_to_listen);
-        console.debug("Prueba de showSuggestAt, elemento:"+video1);
+        console.debug(
+            "Prueba de showSuggestAt, elemento: "+this.video_to_listen.currentTime
+            );
     }
 }
