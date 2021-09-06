@@ -8,7 +8,7 @@ $(document).ready(function main(){
       }
 
       // Get the video element with id="myVideo"
-      var x = document.getElementById("myVideo");
+      var x = $("#myVideo")[0];
 
       // Attach a timeupdate event to the video element, and execute a function if the current playback position has changed
       x.addEventListener("timeupdate", myFunction);
