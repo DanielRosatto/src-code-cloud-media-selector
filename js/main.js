@@ -9,8 +9,6 @@
   **********************************************************************************************************/
   $(document).ready(function main(){
     
-    var playVideo = document.getElementById("founded-show-bot");
-
     refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
@@ -27,14 +25,18 @@
         ]
       );
 
-      bot=new ShowBot(
-        playVideo,
-        "html body section#cont1.col-9 div.widget-show-bot",
-        7
-      );
-     
-      bot.showSuggestAt(5,['../templates/show_bot_widget.html']);
+      var playVideo = document.getElementById("founded-show-bot");
 
-      playVideo.ontimeupdate = function() {bot.myFunction()};
+      console.log('después de document.ready '+playVideo.currentTime);
+
+      // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+      playVideo.ontimeupdate = function() {myFunction()};
+
+      function myFunction() {
+        // Display the current position of the video in a p element with id="demo"
+        $("#widget-show-bot").empty();
+        $("#widget-show-bot").text(playVideo.currentTime);
+        console.log('en ontimeupdate: '+playVideo.currentTime);
+      }
     }
   );
