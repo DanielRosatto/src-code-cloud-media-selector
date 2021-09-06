@@ -7,7 +7,9 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-  $(document).ready(function main(document){
+  $(document).ready(function main(){
+    
+    var playVideo = document.getElementById("founded-show-bot");
 
     refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
