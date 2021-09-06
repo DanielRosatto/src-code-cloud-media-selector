@@ -25,7 +25,7 @@
       );
 
       bot=new ShowBot(
-        playVideo,
+        "#founded-show-bot",
         "html body section#cont1.col-9 div.widget-show-bot",
         7
       );
