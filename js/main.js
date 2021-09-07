@@ -12,7 +12,7 @@
     $("#founded-show-bot").on(
           "timeupdate", 
           function(event){
-        onTrackedVideoFrame(this.currentTime, this.duration);
+        onTrackedVideoFrame2(this.currentTime, this.duration);
       });
 
     refresher = new DivRefresher(
@@ -34,6 +34,6 @@
   );
 
             
-  function onTrackedVideoFrame(currentTime, duration){
+  function onTrackedVideoFrame2(currentTime, duration){
     $("#widget-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
   }
