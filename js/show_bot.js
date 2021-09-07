@@ -9,23 +9,22 @@
  class ShowBot{
     constructor(elem_video_show, elem_out, timefadeout){
         this.video_to_listen=elem_video_show;
+        $(this.video_to_listen).on(
+            "timeupdate", 
+            function(event){
+                this.onTrackedVideoFrame(
+                    this.video_to_listen.currentTime,
+                    this.video_to_listen.duration
+                    );
+            });
         this.codeout=elem_out;
         this.timefadeout=timefadeout;
-        this.changer = new DivRefresher(
-            "html body section#cont1.col-9 div.widget-show-bot"
-            );
-        this.asigner = new ClickBtnAssigner($('.btn-show-bot'));
     }
 
-    showSuggestAt(seconds,array_files){
-        console.debug("Prueba de showSuggestAt, elemento:"+this.video_to_listen.currentTime);
-    }
-
-    myFunction() {
-        // Display the current position of the video in a p element with id="demo"
-        $(this.codeout).empty();
-        $(this.codeout).text(this.video_to_listen.currentTime);
-        console.log('en ontimeupdate: '+this.video_to_listen.currentTime);
+    onTrackedVideoFrame(currentTime, duration){
+        $(this.codeout).text(
+            "tiempo: " + currentTime +"/" + duration
+        );
     }
 
 }
