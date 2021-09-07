@@ -6,25 +6,32 @@
  * Laboraorio 215                                                                                         *
  * Archivo show_bot.js                                                                                    *
  **********************************************************************************************************/
- class ShowBot{
-    constructor(elem_video_show, elem_out, timefadeout){
-        this.video_to_listen=elem_video_show;
-        $(this.video_to_listen).on(
-            "timeupdate", 
-            function(event){
-                this.onTrackedVideoFrame(
-                    $(this.video_to_listen).currentTime,
-                    $(this.video_to_listen).duration
-                    );
-            });
+class Show{
+    constructor(elem_out){
         this.codeout=elem_out;
-        this.timefadeout=timefadeout;
     }
 
     onTrackedVideoFrame(currentTime, duration){
         $(this.codeout).text(
             "tiempo: " + currentTime +"/" + duration
         );
+    }
+
+}
+
+class ShowBot extends Show{
+    constructor(elem_video_show, elem_out, timefadeout){
+        super(elem_out);
+        this.video_to_listen=elem_video_show;
+        $(this.video_to_listen).on(
+            "timeupdate", 
+            function(event){
+                super.onTrackedVideoFrame(
+                    $(this.video_to_listen).currentTime,
+                    $(this.video_to_listen).duration
+                    );
+            });
+        this.timefadeout=timefadeout;
     }
 
 }
