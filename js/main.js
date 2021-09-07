@@ -7,9 +7,8 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-  $(document).ready(function main(){
-
-    $("#founded-show-bot").on(
+  $(document).ready(function(){
+    $("#mediaShowBot").on(
           "timeupdate", 
           function(event){
         onTrackedVideoFrame2(this.currentTime, this.duration);
@@ -35,5 +34,5 @@
 
             
   function onTrackedVideoFrame2(currentTime, duration){
-    $("#widget-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
+    $("#widgetShowBot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
   }
