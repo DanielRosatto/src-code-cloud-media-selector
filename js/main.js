@@ -8,19 +8,15 @@
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
   $(document).ready(function main(){
-    
-    var playVideo = document.getElementById("founded-show-bot");
 
-    console.log('después de document.ready '+playVideo.currentTime);
-
-    // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
-    playVideo.ontimeupdate = function() {myFunction()};
-
-    function myFunction() {
-      // Display the current position of the video in a p element with id="demo"
-      $("#widget-show-bot").empty();
-      $("#widget-show-bot").text(playVideo.currentTime);
-      console.log('en ontimeupdate: '+playVideo.currentTime);
+    $("#mwidget-show-bot").on(
+          "timeupdate", 
+          function(event){
+        onTrackedVideoFrame(this.currentTime, this.duration);
+      });
+          
+    function onTrackedVideoFrame(currentTime, duration){
+      $("#founded-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
     }
 
     refresher = new DivRefresher(
