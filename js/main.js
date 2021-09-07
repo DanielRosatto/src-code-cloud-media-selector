@@ -9,7 +9,7 @@
   **********************************************************************************************************/
   $(document).ready(function main(){
 
-    $("#widget-show-bot").on(
+    $("#founded-show-bot").on(
           "timeupdate", 
           function(event){
         onTrackedVideoFrame(this.currentTime, this.duration);
@@ -35,5 +35,5 @@
 
             
   function onTrackedVideoFrame(currentTime, duration){
-    $("#founded-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
+    $("#widget-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
   }
