@@ -13,8 +13,8 @@
             "timeupdate", 
             function(event){
                 this.onTrackedVideoFrame(
-                    this.video_to_listen.currentTime,
-                    this.video_to_listen.duration
+                    $(this.video_to_listen).currentTime,
+                    $(this.video_to_listen).duration
                     );
             });
         this.codeout=elem_out;
