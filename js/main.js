@@ -9,15 +9,11 @@
   **********************************************************************************************************/
   $(document).ready(function main(){
 
-    $("#mwidget-show-bot").on(
+    $("#widget-show-bot").on(
           "timeupdate", 
           function(event){
         onTrackedVideoFrame(this.currentTime, this.duration);
       });
-          
-    function onTrackedVideoFrame(currentTime, duration){
-      $("#founded-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
-    }
 
     refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
@@ -36,3 +32,8 @@
       );
     }
   );
+
+            
+  function onTrackedVideoFrame(currentTime, duration){
+    $("#founded-show-bot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
+  }
