@@ -9,22 +9,23 @@
  class ShowBot{
     constructor(elem_video_show, elem_out, timefadeout){
         this.video_to_listen=elem_video_show;
+        this.codeout=elem_out;
+        this.timefadeout=timefadeout;
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
                 onTrackedVideoFrame(
                     $(this.video_to_listen).currentTime,
-                    $(this.video_to_listen).duration
+                    $(this.video_to_listen).duration,
+                    this.codeout
                     );
             });
-        this.codeout=elem_out;
-        this.timefadeout=timefadeout;
-    }
-
-    onTrackedVideoFrame(currentTime, duration){
-        $(this.codeout).text(
-            "tiempo: " + currentTime +"/" + duration
-        );
     }
 
 }
+
+function onTrackedVideoFrame(currentTime, duration,id){
+        $(id).text(
+            "tiempo: " + currentTime +"/" + duration
+        );
+    }
