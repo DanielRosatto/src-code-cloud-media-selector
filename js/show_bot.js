@@ -14,14 +14,16 @@
     }
 
     init(){
-        $(this.video_to_listen).on(
+        vid=this.video_to_listen;
+        out=this.codeout;
+        $(vid).on(
             "timeupdate", 
-            function(event){
-                $(this.codeout).text(
+            function(event,vid,out){
+                $(out).text(
                         "tiempo: " + 
-                        $(this.video_to_listen).currentTime +
+                        $(vid).currentTime +
                         "/" + 
-                        $(this.video_to_listen).duration
+                        $(vid).duration
                     );
             }
 
