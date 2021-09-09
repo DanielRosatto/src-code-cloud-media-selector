@@ -17,20 +17,15 @@
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
-                this.onTrackedVideoFrame(
-                    $(this.video_to_listen).currentTime,
-                    $(this.video_to_listen).duration,
-                    this.codeout
+                $(this.codeout).text(
+                        "tiempo: " + 
+                        $(this.video_to_listen).currentTime +
+                        "/" + 
+                        $(this.video_to_listen).duration
                     );
             }
-        );
-    }
 
-    onTrackedVideoFrame(currentTime, duration,id){
-        $(id).text(
-            "tiempo: " + currentTime +"/" + duration
         );
     }
-    
 
 }
