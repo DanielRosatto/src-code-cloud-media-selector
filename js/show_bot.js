@@ -23,7 +23,9 @@
                         "/" + 
                         event.target.duration
                     );
-                console.debug("Desde event: "+event.target.innerHTML);
+                console.debug(
+                    "Desde event: "+event.target.nextSibling.innerHTML
+                    );
             }
 
         );
