@@ -14,8 +14,8 @@
     }
 
     init(){
-        vid=this.video_to_listen;
-        out=this.codeout;
+        let vid=this.video_to_listen;
+        let out=this.codeout;
         $(vid).on(
             "timeupdate", 
             function(event,vid,out){
