@@ -16,8 +16,8 @@
     init(){
         $(this.video_to_listen).on(
             "timeupdate", 
-            function(event,vid,out){
-                $("demo").text(
+            function(event){
+                $("#demo").text(
                         "tiempo: " + 
                         event.target.currentTime +
                         "/" + 
