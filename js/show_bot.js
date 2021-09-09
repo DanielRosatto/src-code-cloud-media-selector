@@ -14,16 +14,14 @@
     }
 
     init(){
-        let vid=this.video_to_listen;
-        let out=this.codeout;
-        $(vid).on(
+        $(this.video_to_listen).on(
             "timeupdate", 
             function(event,vid,out){
-                $(out).text(
+                $("demo").text(
                         "tiempo: " + 
-                        $(vid).currentTime +
+                        event.target.currentTime +
                         "/" + 
-                        $(vid).duration
+                        event.target.duration
                     );
             }
 
