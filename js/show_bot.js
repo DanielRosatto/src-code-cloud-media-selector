@@ -11,10 +11,13 @@
         this.video_to_listen=elem_video_show;
         this.codeout=elem_out;
         this.timefadeout=timefadeout;
+    }
+
+    init(){
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
-                new onTrackedVideoFrame(
+                this.onTrackedVideoFrame(
                     $(this.video_to_listen).currentTime,
                     $(this.video_to_listen).duration,
                     this.codeout
@@ -23,10 +26,11 @@
         );
     }
 
-}
+    onTrackedVideoFrame(currentTime, duration,id){
+        $(id).text(
+            "tiempo: " + currentTime +"/" + duration
+        );
+    }
+    
 
-function onTrackedVideoFrame(currentTime, duration,id){
-    $(id).text(
-        "tiempo: " + currentTime +"/" + duration
-    );
 }
