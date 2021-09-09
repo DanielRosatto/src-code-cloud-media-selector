@@ -14,18 +14,19 @@
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
-                onTrackedVideoFrame(
+                new onTrackedVideoFrame(
                     $(this.video_to_listen).currentTime,
                     $(this.video_to_listen).duration,
                     this.codeout
                     );
-            });
+            }
+        );
     }
 
 }
 
 function onTrackedVideoFrame(currentTime, duration,id){
-        $(id).text(
-            "tiempo: " + currentTime +"/" + duration
-        );
-    }
+    $(id).text(
+        "tiempo: " + currentTime +"/" + duration
+    );
+}
