@@ -23,6 +23,7 @@
                         "/" + 
                         event.target.duration
                     );
+                console.debug("Desde event: "+event.target.innerHTML);
             }
 
         );
