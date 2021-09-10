@@ -22,7 +22,7 @@
                         "/" + 
                         event.target.duration
                     );
-                console.debug("Desde event: "+$(event.target).parent().parent().find('p').html() );
+                console.debug("Desde event: "+$(event.target).paret().parent().find('span').html() );
             }
 
         );
