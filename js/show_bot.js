@@ -24,7 +24,7 @@
                         event.target.duration
                     );
                 console.debug(
-                    "Desde event: "+event.target.nextSibling.innerHTML
+                    "Desde event: "+event.target.html()0
                     );
             }
 
