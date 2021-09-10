@@ -24,10 +24,7 @@
                         event.target.duration
                     );
                 console.debug(
-                    "Desde event: "+
-                        event.target.
-                            parentElement.
-                                childNodes.innerHTML
+                    "Desde event: "+event.target.parentElement.childNodes.innerHTML
                     );
             }
 
