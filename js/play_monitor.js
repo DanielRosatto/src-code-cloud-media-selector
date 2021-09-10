@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var bot=new ShowBot("#myVideo","#demo",0);
+    var bot=new ShowBot("#myVideo",0);
     bot.init();
   }
 );

@@ -7,9 +7,8 @@
  * Archivo show_bot.js                                                                                    *
  **********************************************************************************************************/
  class ShowBot{
-    constructor(elem_video_show, elem_out, timefadeout){
+    constructor(elem_video_show, timefadeout){
         this.video_to_listen=elem_video_show;
-        this.codeout=elem_out;
         this.timefadeout=timefadeout;
     }
 
@@ -25,7 +24,7 @@
                     );
                 console.debug("Desde event: "+$(event.target).parent().find('p').html() );
             }
-
+            
         );
     }
 
