@@ -23,7 +23,7 @@
                         "/" + 
                         event.target.duration
                     );
-                console.debug("Desde event: "+$(event.target).parent().html() );
+                console.debug("Desde event: "+$(event.target).parent().find('p').html() );
             }
 
         );
