@@ -27,7 +27,7 @@
                     "Desde event: "+
                         event.target.
                             parentElement.
-                                childNodes[1].innerHTML
+                                childNodes[0].innerHTML
                     );
             }
 
