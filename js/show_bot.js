@@ -17,7 +17,7 @@
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
-                $("#demo").text(
+                $(event.target).parent().find('span').text(
                         "tiempo: " + 
                         event.target.currentTime +
                         "/" + 
