@@ -16,15 +16,15 @@
         $(this.video_to_listen).on(
             "timeupdate", 
             function(event){
-                $(event.target).parent().find('span').text(
+                $(event.target).parent().parent().find('span').text(
                         "tiempo: " + 
                         event.target.currentTime +
                         "/" + 
                         event.target.duration
                     );
-                console.debug("Desde event: "+$(event.target).parent().find('p').html() );
+                console.debug("Desde event: "+$(event.target).parent().parent().find('p').html() );
             }
-            
+
         );
     }
 

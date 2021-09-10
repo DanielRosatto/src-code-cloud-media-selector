@@ -8,13 +8,7 @@
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
   $(document).ready(function(){
-    $("#mediaShowBot").on(
-          "timeupdate", 
-          function(event){
-        onTrackedVideoFrame2(this.currentTime, this.duration);
-      });
-
-    refresher = new DivRefresher(
+      refresher = new DivRefresher(
         "html body section#cont1.col-9 div.resultado"
         );
       asigner = new ClickBtnAssigner($('.btn-video'));
@@ -29,10 +23,8 @@
           "../templates/Video4.html"
         ]
       );
+
+      bot=new ShowBot("#mediaShowBot");
+      bot.init();
     }
   );
-
-            
-  function onTrackedVideoFrame2(currentTime, duration){
-    $("#widgetShowBot").text("tiempo: " + currentTime +"/" + duration); //Change #current to currentTime
-  }
