@@ -8,12 +8,9 @@
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
   $(document).ready(function(){
-      refresher = new DivRefresher(
-        "html body section#cont1.col-9 div.resultado"
-        );
+      refresher = new DivRefresher(".resultado");
       asigner = new ClickBtnAssigner($('.btn-video'));
 
-      refresher.changeFor("../templates/Video4.html");
       asigner.onClickBtn(
         refresher,
         [

@@ -26,6 +26,7 @@
             }
 
         );
+        $(this.video_to_listen).get(0).load();
     }
 
 }
