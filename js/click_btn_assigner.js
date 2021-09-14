@@ -8,24 +8,24 @@
  **********************************************************************************************************/
 class ClickBtnAssigner{
 
-    constructor(elems){
-        this.btns=elems;
-        this.all_assigned=0;
+  constructor(elems,botId){
+      this.buttons=elems;
+      this.all_assigned=0;
+      this.botId = botId;
     }
 
-    onClickBtn(refresher,files){
-      let index=0;
-      let context=this;
-      files.forEach(function eachFile(file){
-        $(context.btns[index++]).click(
+  onClickBtn(mainObj,files){
+    let index=0;
+
+    files.forEach(function eachFile(file){
+        $(mainObj.asigner.buttons[index++]).click(
           function(e) {
-            refresher.changeFor(file);
+            mainObj.refresher.changeFor(file,mainObj.asigner.botId);
           }
         );
       }
-      );
-      this.all_assigned=index;
-    }
-
+    );
+    mainObj.asigner.all_assigned=index;
+  }
 
 }

@@ -10,6 +10,8 @@
     constructor(elem_video_show, timefadeout){
         this.video_to_listen=elem_video_show;
         this.timefadeout=timefadeout;
+        this.init();
+        $(elem_video_show).parent().parent().find('span').text("Show bot init..");
     }
 
     init(){
@@ -26,7 +28,6 @@
             }
 
         );
-        $(this.video_to_listen).get(0).load();
     }
 
 }

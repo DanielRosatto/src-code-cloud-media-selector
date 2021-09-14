@@ -7,12 +7,23 @@
   * Laboraorio 215                                                                                         *
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
-  $(document).ready(function(){
-      refresher = new DivRefresher(".resultado");
-      asigner = new ClickBtnAssigner($('.btn-video'));
+  class MainObj{
+    constructor(botId, refrClass, btnClass){
+      this.refresher= new DivRefresher(refrClass);
+      this.asigner=new ClickBtnAssigner($(btnClass),botId);
+    }
 
-      asigner.onClickBtn(
-        refresher,
+    initMain(elems){
+      this.asigner.onClickBtn(
+        this,
+        elems
+      );
+    }
+  }
+ 
+ $(document).ready(function(){
+      var mainObj = new MainObj("#mediaShowBot",".resultado",'.btn-video');
+      mainObj.initMain(
         [
           "../templates/Video1.html",
           "../templates/Video2.html",
@@ -20,8 +31,6 @@
           "../templates/Video4.html"
         ]
       );
-
-      bot=new ShowBot("#mediaShowBot");
-      bot.init();
+      
     }
   );
