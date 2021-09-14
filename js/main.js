@@ -22,7 +22,11 @@
   }
  
  $(document).ready(function(){
-      var mainObj = new MainObj("#mediaShowBot",".resultado",'.btn-video');
+      var mainObj = new MainObj(
+                          "#mediaShowBot",
+                          ".resultado",
+                          '.btn-video'
+                          );
       mainObj.initMain(
         [
           "../templates/Video1.html",
@@ -31,6 +35,6 @@
           "../templates/Video4.html"
         ]
       );
-      
+      new ShowBot("#mediaShowBot",9);
     }
   );

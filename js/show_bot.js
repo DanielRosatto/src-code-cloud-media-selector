@@ -24,7 +24,7 @@
                         "/" + 
                         event.target.duration
                     );
-                console.debug("Desde event: "+$(event.target).parent().parent().find('span').html() );
+                /* console.debug("Desde event: "+$(event.target).parent().parent().find('span').html() ); */
             }
 
         );
