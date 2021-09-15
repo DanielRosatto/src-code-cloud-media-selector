@@ -17,17 +17,17 @@
     init(){
         $(this.video_to_listen).on(
             "timeupdate", 
-            function(event){
-                $(event.target).parent().parent().find('span').text(
+            (function(passedInElement) {
+                return function(e) { 
+                    $(e.target).parent().parent().find('span').text(
                         "tiempo: " + 
-                        event.target.currentTime +
+                        e.target.currentTime +
                         "/" + 
-                        event.target.duration
+                        e.target.duration +
+                        "fadeout: "+ passedInElement[0] 
                     );
-                /* console.debug("Desde event: "+$(event.target).parent().parent().find('span').html() ); */
-            }
-
+                }
+            }) ([this.timefadeout])
         );
     }
-
 }

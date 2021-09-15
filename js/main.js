@@ -28,13 +28,13 @@
                           '.btn-video'
                           );
       mainObj.initMain(
-        [
-          "../templates/Video1.html",
-          "../templates/Video2.html",
-          "../templates/Video3.html",
-          "../templates/Video4.html"
-        ]
-      );
+                        [
+                          "../templates/Video1.html",
+                          "../templates/Video2.html",
+                          "../templates/Video3.html",
+                          "../templates/Video4.html"
+                        ]
+                      );
       new ShowBot("#mediaShowBot",9);
     }
   );
