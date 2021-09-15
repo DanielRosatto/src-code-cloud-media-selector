@@ -13,7 +13,7 @@ class DivRefresher{
 
     changeFor(code,botId){
         $(this.codeout).load(code, function() {
-            new ShowBot(botId,9);
+            new ShowBot(botId,3,9);
         });
    }
 }

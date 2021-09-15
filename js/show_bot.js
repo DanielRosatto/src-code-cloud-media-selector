@@ -7,9 +7,10 @@
  * Archivo show_bot.js                                                                                    *
  **********************************************************************************************************/
  class ShowBot{
-    constructor(elem_video_show, timefadeout){
+    constructor(elem_video_show, start_time_show_suggest, timefadeout){
         this.video_to_listen=elem_video_show;
-        this.timefadeout=timefadeout;
+        this.time_fadeout=timefadeout;
+        this.start_time_show_suggest=start_time_show_suggest;
         this.init();
         $(elem_video_show).parent().parent().find('span').text("Show bot init..");
     }
@@ -24,10 +25,12 @@
                         e.target.currentTime +
                         "/" + 
                         e.target.duration +
-                        "fadeout: "+ passedInElement[0] 
+                        ", fadeout: "+ passedInElement[0] +
+                        ", time to suggest: "+passedInElement[1]
                     );
                 }
-            }) ([this.timefadeout])
+            }) ([this.time_fadeout, this.start_time_show_suggest])
         );
+        /* console.debug("Desde event: "+$(event.target).parent().parent().find('span').html() ); */
     }
 }

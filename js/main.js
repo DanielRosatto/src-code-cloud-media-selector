@@ -35,6 +35,6 @@
                           "../templates/Video4.html"
                         ]
                       );
-      new ShowBot("#mediaShowBot",9);
+      new ShowBot("#mediaShowBot",3,9);
     }
   );
