@@ -20,17 +20,39 @@
             "timeupdate", 
             (function(passedInElement) {
                 return function(e) { 
-                    $(e.target).parent().parent().find('span').text(
-                        "tiempo: " + 
-                        e.target.currentTime +
-                        "/" + 
-                        e.target.duration +
-                        ", fadeout: "+ passedInElement[0] +
-                        ", time to suggest: "+passedInElement[1]
-                    );
+                    switch (true) {
+                        case (
+                            e.target.currentTime < passedInElement[0] &&
+                            e.target.currentTime > passedInElement[1]):
+                            console.debug("Dentro del rango");
+                            $(e.target).parent().parent().find('span').text(
+                                "tiempo: " + 
+                                e.target.currentTime +
+                                "/" + 
+                                e.target.duration +
+                                ", fadeout: "+ passedInElement[0] +
+                                ", time to suggest: "+passedInElement[1]
+                            );
+                            if($(e.target).parent().parent().find("#elem_child").length < 1){
+                                $(e.target).parent().parent().append("<div id='elem_child'></div>");
+                            }
+                            break;
+                        case (e.target.currentTime < passedInElement[0]):
+                            console.debug("Antes del rango");
+                            break;
+                        case (e.target.currentTime > passedInElement[1]):
+                            console.debug("Después del rango");
+                            if($(e.target).parent().parent().find("#elem_child").length > 0 ){
+                                $(e.target).parent().parent().find("#elem_child").remove();
+                            }
+                            break;
+                        default:
+                            console.debug("Desde event: "+
+                                $(e.target).parent().parent().find('span').html() );
+                            break;
+                    }
                 }
             }) ([this.time_fadeout, this.start_time_show_suggest])
         );
-        /* console.debug("Desde event: "+$(event.target).parent().parent().find('span').html() ); */
     }
 }
