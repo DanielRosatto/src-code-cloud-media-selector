@@ -33,8 +33,9 @@
                                 ", fadeout: "+ passedInElement[0] +
                                 ", time to suggest: "+passedInElement[1]
                             );
-                            if($(e.target).parent().parent().find("#elem_child").length < 1){
-                                $(e.target).parent().parent().append("<div id='elem_child'></div>");
+                            if($(e.target).parent().parent().find("#elem_init").length < 1){
+                                $(e.target).parent().parent().append("<div id='elem_init'></div>");
+                                $(e.target).parent().parent().find("#elem_init").load("../templates/show_bot_widget.html");
                             }
                             break;
                         case (e.target.currentTime < passedInElement[0]):
@@ -42,8 +43,8 @@
                             break;
                         case (e.target.currentTime > passedInElement[1]):
                             console.debug("Después del rango");
-                            if($(e.target).parent().parent().find("#elem_child").length > 0 ){
-                                $(e.target).parent().parent().find("#elem_child").remove();
+                            if($(e.target).parent().parent().find("#elem_init").length > 0 ){
+                                $(e.target).parent().parent().find("#elem_init").remove();
                             }
                             break;
                         default:
