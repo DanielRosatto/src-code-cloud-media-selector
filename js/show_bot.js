@@ -24,6 +24,38 @@
                         case (
                             e.target.currentTime < passedInElement[0] &&
                             e.target.currentTime > passedInElement[1]):
+                            if($(e.target).parent().parent().find("#elem_init").length < 1){
+                                $(e.target).parent().parent().append("<div id='elem_init'></div>");
+                                $(e.target).parent().parent().find("#elem_init").load("../templates/show_bot_widget.html");
+                            }
+                            break;
+                        case (e.target.currentTime < passedInElement[0]):
+                            /* console.debug("Antes del rango"); */
+                            break;
+                        case (e.target.currentTime > passedInElement[1]):
+                            if($(e.target).parent().parent().find("#elem_init").length > 0 ){
+                                $(e.target).parent().parent().find("#elem_init").remove();
+                            }
+                            break;
+                        default:
+                            console.debug("Error de parámetros: "+
+                                $(e.target).parent().parent().find('#elem_init').html() );
+                            break;
+                    }
+                }
+            }) ([this.time_fadeout, this.start_time_show_suggest])
+        );
+    }
+
+/*     init(){
+        $(this.video_to_listen).on(
+            "timeupdate", 
+            (function(passedInElement) {
+                return function(e) { 
+                    switch (true) {
+                        case (
+                            e.target.currentTime < passedInElement[0] &&
+                            e.target.currentTime > passedInElement[1]):
                             console.debug("Dentro del rango");
                             $(e.target).parent().parent().find('span').text(
                                 "tiempo: " + 
@@ -32,7 +64,7 @@
                                 e.target.duration +
                                 ", fadeout: "+ passedInElement[0] +
                                 ", time to suggest: "+passedInElement[1]
-                            );
+                            ); 
                             if($(e.target).parent().parent().find("#elem_init").length < 1){
                                 $(e.target).parent().parent().append("<div id='elem_init'></div>");
                                 $(e.target).parent().parent().find("#elem_init").load("../templates/show_bot_widget.html");
@@ -42,7 +74,7 @@
                             console.debug("Antes del rango");
                             break;
                         case (e.target.currentTime > passedInElement[1]):
-                            console.debug("Después del rango");
+                            console.debug("Después del rango"); 
                             if($(e.target).parent().parent().find("#elem_init").length > 0 ){
                                 $(e.target).parent().parent().find("#elem_init").remove();
                             }
@@ -55,5 +87,5 @@
                 }
             }) ([this.time_fadeout, this.start_time_show_suggest])
         );
-    }
+    } */
 }
