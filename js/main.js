@@ -24,7 +24,7 @@
  $(document).ready(function(){
       var mainObj = new MainObj(
                           "#mediaShowBot",
-                          ".resultado",
+                          "#resultado",
                           '.btn-video'
                           );
       mainObj.initMain(
@@ -35,6 +35,7 @@
                           "../templates/Video4.html"
                         ]
                       );
-      new ShowBot("#mediaShowBot",3,9);
+      bot=new ShowBot("#mediaShowBot",[[5,7,"link1"],[2,3,"link2"],[3,8,"link3"]]);
+      //bot.debug();
     }
   );
