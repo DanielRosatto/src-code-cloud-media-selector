@@ -12,45 +12,47 @@
         this.related_arr=related_arr;
         this.validate_timming();
         this.init();
-   }
+    }
 
     init(){
         $(this.video_to_listen).on(
             "timeupdate", (function(passedInElement) {
                 if(typeof(passedInElement) != undefined  && passedInElement != null){
-                    return function(e) {
-                        //this.related_arr.forEach(function eacRelated(related){
-                        passedInElement.forEach(function eachRelated(related){
+                    return function(e) {passedInElement.forEach(function eachRelated(related){
                         switch (true) {
-                                case (
-                                    e.target.currentTime < related[1] &&
-                                    e.target.currentTime > related[0] ):
-                                    if($(e.target).parent().parent().find("#elem_init").length < 1){
-                                        $(e.target).parent().parent().append("<div id='elem_init'></div>");
-                                        $(e.target).parent().parent().find("#elem_init").load(
-                                            "../templates/show_bot_widget.html");
-                                    }
-                                    //console.debug("En el rango 00:"+passedInElement[0][0]+" 01: "+passedInElement[0][1]);
-                                    break;
-                                case (e.target.currentTime < related[0]):
-                                    //console.debug("Antes del rango00:"+passedInElement[0][0]+" 01: "+passedInElement[0][1]);
-                                    break;
-                                case (e.target.currentTime > related[1]):
-                                    if($(e.target).parent().parent().find("#elem_init").length > 0 ){
-                                        $(e.target).parent().parent().find("#elem_init").remove();
-                                    }
-                                    break;
-                                default:
-                                    console.debug(
-                                            "Error de parámetros: "+
-                                            $(e.target).parent().parent().find('#elem_init').html()+
-                                            " PassedIn: "+related
-                                        );
-                                    break;
-                            }
-                        });
-                    }
-                }}) (this.related_arr)
+                            case (
+                                e.target.currentTime < related[1] && e.target.currentTime > related[0] &&
+                                $(e.target).parent().parent().find("#elem_init").length == 0
+                                ):
+                                    $(e.target).parent().parent().append("<div id='elem_init'></div>");
+                                    $(e.target).parent().parent().find("#elem_init").load(
+                                        "../templates/show_bot_widget.html", 
+                                        (function(a,b) {
+                                            console.debug("Rango y elem_init.length < 1:" + $("#elem_init").html());
+                                            $("#elem_init").find(a).prop('value', b);
+                                        }) ('.btn-show-bot',related[2])
+                                    );
+                                break;
+                            case (e.target.currentTime < related[0]):
+                                // console.debug("Antes del rango: "+related+" ... ");
+                                break;
+                            case (e.target.currentTime > related[1] && $(e.target).parent().parent().find("#elem_init").length >= 1 ):
+                                $(e.target).parent().parent().find("#elem_init").remove();
+                                console.debug("Justo después del rango: "+related+" ... ");
+                                break;
+                            case (e.target.currentTime > related[1] && $(e.target).parent().parent().find("#elem_init").length == 0 ):
+                                // console.debug("Después del rango: "+related+" ... ");
+                                break;
+                            default:
+                                console.debug(
+                                        "Error de parámetros: "+
+                                        $(e.target).parent().parent().find('#elem_init').html()+
+                                        " PassedIn: "+related
+                                    );
+                                break;
+                        }
+                    });
+                    }}}) (this.related_arr)
         );
     }
 
