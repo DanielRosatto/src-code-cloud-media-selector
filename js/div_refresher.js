@@ -13,7 +13,7 @@ class DivRefresher{
 
     changeFor(code,botId){
         $(this.codeout).load(code, function() {
-            new ShowBot(botId,[[9,12,"link1"],[16,20,"link2"],[3,8,"link3"]]);
+            new ShowBot(botId,[[9,12,"link1"],[16,20,"link2"],[3,5,"link3"]]);
         });
    }
 }

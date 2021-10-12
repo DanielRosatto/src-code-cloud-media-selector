@@ -8,21 +8,57 @@
  **********************************************************************************************************/
  class ShowBot{
     constructor(elem_video_show,related_arr){
-        this.video_to_listen=elem_video_show;
-        this.related_arr=related_arr;
-        this.validate_timming();
-        this.init();
+        if (typeof ShowBot.instance === 'Object'){
+            ShowBot.instance.related_arr=related_arr;
+            ShowBot.instance.elem_video_show=elem_video_show;
+            ShowBot.instance.validate_timming();
+            ShowBot.instance.init();
+            return ShowBot.instance;
+        }
+        else{
+            this.video_to_listen=elem_video_show;
+            this.related_arr=related_arr;
+            this.validate_timming();
+            this.init();
+        }
     }
 
     init(){
         $(this.video_to_listen).on(
             "timeupdate", (function(passedInElement) {
                 if(typeof(passedInElement) != undefined  && passedInElement != null){
-                    return function(e) {passedInElement.forEach(function eachRelated(related){
+                    return function(e) {
+                        //passedInElement.forEach(function eachRelated(related){
+                        let curr = Math.round(e.target.currentTime,0);
+                        // console.debug("Antes de if:  ... ");
+                        if(into_range(curr, passedInElement) == 1 && 
+                            $(e.target).parent().parent().find("#elem_init").html() == ''){
+                            console.debug("Si se cumple:... "+
+                                $("#elem_init").html()
+                                );
+                            $(e.target).parent().parent().append("<div id='elem_init'></div>");
+                            $(e.target).parent().parent().find("#elem_init").load(
+                                "../templates/show_bot_widget.html",
+                                function() {
+                                    // $(document).ready(
+                                        replaceValue (
+                                            'btn-show-bot1',
+                                            passedInElement[getIndexMatch(curr, passedInElement)][2]
+                                        // )
+                                    );
+                                }
+                            );
+                        }
+                        else if(into_range(curr, passedInElement) == 0 && 
+                                $(e.target).parent().parent().find("#elem_init").length > 0 ){
+                            // console.debug("Si no cumple: ... ");
+                            $(e.target).parent().parent().find("#elem_init").empty();
+                        }      
+                        /* if (curr <= related[1] && curr >= related[0]){ 
                         switch (true) {
                             case (
-                                e.target.currentTime < related[1] && e.target.currentTime > related[0] &&
-                                $(e.target).parent().parent().find("#elem_init").length == 0
+                                curr <= related[1] && curr > related[0]
+                                // && $(e.target).parent().parent().find("#elem_init").length == 0
                                 ):
                                     $(e.target).parent().parent().append("<div id='elem_init'></div>");
                                     $(e.target).parent().parent().find("#elem_init").load(
@@ -33,15 +69,15 @@
                                         }) ('.btn-show-bot',related[2])
                                     );
                                 break;
-                            case (e.target.currentTime < related[0]):
+                            case (curr < related[0]):
                                 // console.debug("Antes del rango: "+related+" ... ");
                                 break;
-                            case (e.target.currentTime > related[1] && $(e.target).parent().parent().find("#elem_init").length >= 1 ):
+                            case (curr == related[1] && $(e.target).parent().parent().find("#elem_init").length >= 1 ):
                                 $(e.target).parent().parent().find("#elem_init").remove();
                                 console.debug("Justo después del rango: "+related+" ... ");
                                 break;
-                            case (e.target.currentTime > related[1] && $(e.target).parent().parent().find("#elem_init").length == 0 ):
-                                // console.debug("Después del rango: "+related+" ... ");
+                            case (curr > related[1] && $(e.target).parent().parent().find("#elem_init").length == 0 ):
+                                console.debug("Después del rango: "+related+" ... ");
                                 break;
                             default:
                                 console.debug(
@@ -50,9 +86,10 @@
                                         " PassedIn: "+related
                                     );
                                 break;
-                        }
-                    });
-                    }}}) (this.related_arr)
+                            } 
+                        }*/
+                    //});
+                }}}) (this.related_arr)
         );
     }
 
@@ -134,3 +171,30 @@ function compareRelatedArr(a, b) {
     return undefined;
 }
   
+function into_range(current, arr){
+    let rtn = 0;
+    arr.forEach(function eachInArr(related){
+        if (related[0]<=current && current<=related[1]){
+            rtn = 1;
+        }
+    });
+    if(rtn==0)console.debug("[Into Range]: out: "+rtn+" ... curr: "+current);
+    return rtn;
+}
+
+function getIndexMatch(current, arr){
+    let i=0;
+    arr.forEach(function eachIndex(related){
+        if (related[0]<=current && current<=related[1]){
+            return i;
+        }
+        i=i+1;
+    });
+    console.debug("[get index]: out "+i+", curr: "+current+", i: "+i);
+    return i;
+}
+
+function replaceValue(a,b) {
+    console.debug("A:"+ a +" B: " + b + $("#elem_init").html());
+    document.getElementById(a).setAttribute('value', b);
+}
