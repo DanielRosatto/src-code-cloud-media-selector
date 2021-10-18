@@ -35,7 +35,15 @@
                           "../templates/Video4.html"
                         ]
                       );
-      bot=new ShowBot("#mediaShowBot",[[5,10,"link1"],[26,30,"link A"],[36,44,"link b"],[13,18,"link3"]]);
+      bot=new ShowBot(
+        /*id del video*/"#mediaShowBot",
+        [/*Lista del contenido relacionado: Intervalo, link, indicación corta, descripción*/
+          /**/[5,10,"link1"],
+          /**/[26,30,"link A"],
+          /**/[36,44,"link b"],
+          /**/[13,18,"link3"]
+        ]
+      );
       //bot.debug();
     }
   );

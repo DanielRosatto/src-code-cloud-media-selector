@@ -15,17 +15,26 @@ class ClickBtnAssigner{
     }
 
   onClickBtn(mainObj,files){
-    let index=0;
-
-    files.forEach(function eachFile(file){
-        $(mainObj.asigner.buttons[index++]).click(
-          function(e) {
-            mainObj.refresher.changeFor(file,mainObj.asigner.botId);
-          }
-        );
+    files.forEach(function eachFile(file, index){
+      $.get("../templates/nav_item.html", function (data) {
+        $("#btn-assigner-element").append(data);
+        $('.btn-video').last().prop('value','Video'+index);
+        // $('.btn-video').last().parent().text('Contenido: '+index+1);
+        $('.btn-video').last().click(function(e){
+          mainObj.refresher.changeFor(file,mainObj.asigner.botId);
+        });
+      });
       }
     );
-    mainObj.asigner.all_assigned=index;
+    // files.forEach(function eachFile(file,index){
+    //   $(mainObj.asigner.buttons[index]).click(
+    //       function(e) {
+    //         mainObj.refresher.changeFor(file,mainObj.asigner.botId);
+    //       }
+    //     );
+    //   }
+    // );
+    mainObj.asigner.all_assigned=files.length;
   }
 
 }
