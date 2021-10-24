@@ -11,9 +11,9 @@ class DivRefresher{
         this.codeout=elem;
     }
 
-    changeFor(code,botId){
-        $(this.codeout).load(code, function() {
-            new ShowBot(botId,[[9,12,"link1"],[16,20,"link2"],[3,5,"link3"]]);
+    changeFor(file,botId){
+        $(this.codeout).load(file, function() {
+            new ShowBot(botId,JSON.parse($(".hide_array").text()));
         });
    }
 }

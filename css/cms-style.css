@@ -122,6 +122,17 @@ body nav.col-3 ul.menu_ul {
 html body nav#tmdbNav.col-3.menu ul.menu_ul li:hover {
     background: #fff2be; /* fondo del menu mouseover */
 }
+html body nav#tmdbNav.col-3.menu ul#btn-assigner-element.menu_ul li input.btn-video{
+    width: 40%;
+    background-color: #a0eecc;
+    border-color: #bfebd8;
+    text-decoration: none;
+    border-radius: 6px;
+}
+html body nav#tmdbNav.col-3.menu ul#btn-assigner-element.menu_ul li input.btn-video:hover{
+    background-color: azure;
+    border-color: antiquewhite;
+}
 
 input#selGenButt{
     width: 97%;

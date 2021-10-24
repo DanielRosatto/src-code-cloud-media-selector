@@ -8,21 +8,26 @@
   * Archivo main.js                                                                                        *
   **********************************************************************************************************/
   class MainObj{
-    constructor(botId, refrClass, btnClass){
-      this.refresher= new DivRefresher(refrClass);
-      this.asigner=new ClickBtnAssigner($(btnClass),botId);
+    constructor(menuId, botId, refrClass, btnClass){
+      this.refresher= new DivRefresher(
+        /*Elemendo dom que muestra el contenido que incluya el video.*/refrClass);
+      this.asigner=new ClickBtnAssigner(
+        /* El id del menu */menuId,
+        /* clase a la que se asigna onclick */btnClass,
+        /* Video de entrada al bot de sugerencias */botId);
     }
 
     initMain(elems){
       this.asigner.onClickBtn(
-        this,
-        elems
+        this, /* Objeto principal */ 
+        elems /* Archivos html que contienen links de videos */
       );
     }
   }
  
  $(document).ready(function(){
       var mainObj = new MainObj(
+                          /* El id del menu */"#btn-assigner-element",
                           "#mediaShowBot",
                           "#resultado",
                           '.btn-video'
@@ -38,10 +43,10 @@
       bot=new ShowBot(
         /*id del video*/"#mediaShowBot",
         [/*Lista del contenido relacionado: Intervalo, link, indicación corta, descripción*/
-          /**/[5,10,"link1"],
-          /**/[26,30,"link A"],
-          /**/[36,44,"link b"],
-          /**/[13,18,"link3"]
+          /**/[5,10,"link1", "Indicación 1", "Una descripción para el elemento 1."],
+          /**/[26,30,"link A", "Indicación A", "Una descripción para el elemento A."],
+          /**/[36,44,"link b", "Indicación b", "Una descripción para el elemento b."],
+          /**/[13,18,"link3", "Indicación 3", "Una descripción para el elemento 3."]
         ]
       );
       //bot.debug();
