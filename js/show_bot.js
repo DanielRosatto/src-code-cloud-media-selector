@@ -40,7 +40,7 @@
                                         function() {
                                             __this__.replaceValue ('.btn-show-bot',__this__.related_arr[
                                                 __this__.into_range(e.target.currentTime, __this__.related_arr)[1]
-                                            ][2]);
+                                            ]);
                                         }
                                     );
                                 }
@@ -93,9 +93,20 @@
         return rtn;
     }
     
-    replaceValue(a,b) {
-        // console.debug("A:"+ a +" B: " + b + $("#elem_init").html());
-        $(a).prop('value', b);
+    /*
+    replaceValue: edita dinamicamente el archivo show_bot_widget_content.html
+        <span>
+            <strong id="desc_show_bot">Descrp. del contenido...</strong>
+            <input type="button" 
+            class="btn-show-bot" 
+            value="Indic. Corta." 
+            onclick="location.href='https://www.w3.org'"/>
+        </span>
+    */
+    replaceValue(elem/*.btn-show-bot'*/,arr_repl/*[..,2,3,4,..]*/) {
+        $(elem).prop('value', arr_repl[3]);
+        $(elem).click(function(){location.href=arr_repl[2]});
+        $(elem).parent().find('strong').text(arr_repl[4]);
     }
 
     compareRelatedArr(a, b) {

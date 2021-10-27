@@ -37,16 +37,17 @@
                           "../templates/Video1.html",
                           "../templates/Video2.html",
                           "../templates/Video3.html",
-                          "../templates/Video4.html"
+                          "../templates/Video4.html",
+                          "../templates/Video_5.html"
                         ]
                       );
       bot=new ShowBot(
         /*id del video*/"#mediaShowBot",
         [/*Lista del contenido relacionado: Intervalo, link, indicación corta, descripción*/
-          /**/[5,10,"link1", "Indicación 1", "Una descripción para el elemento 1."],
-          /**/[26,30,"link A", "Indicación A", "Una descripción para el elemento A."],
-          /**/[36,44,"link b", "Indicación b", "Una descripción para el elemento b."],
-          /**/[13,18,"link3", "Indicación 3", "Una descripción para el elemento 3."]
+          /**/[5,10,"https://www.buenosaires.gob.ar", "Indicación 1", "Una descripción para el elemento 1."],
+          /**/[26,30,"https://unaj.edu.ar", "Indicación A", "Una descripción para el elemento A."],
+          /**/[36,44,"https://fiuba.edu.ar", "Indicación b", "Una descripción para el elemento b."],
+          /**/[13,18,"unq.edu.ar", "Indicación 3", "Una descripción para el elemento 3."]
         ]
       );
       //bot.debug();
