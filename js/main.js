@@ -55,10 +55,10 @@
       bot=new ShowBot(
         /*id del video*/"#mediaShowBot",
         [/*Lista del contenido relacionado: Intervalo, link, indicación corta, descripción*/
-          /**/[5,10,"https://www.buenosaires.gob.ar", "Indicación 1", "Una descripción para el elemento 1."],
-          /**/[26,30,"https://cloud-media-selector.herokuapp.com/?param1=Video_5", "Ir a Video 5", "Una descripción para el elemento A."],
-          /**/[36,44,"https://fiuba.edu.ar", "Indicación b", "Una descripción para el elemento b."],
-          /**/[13,18,"unq.edu.ar", "Indicación 3", "Una descripción para el elemento 3."]
+          /**/[5,10,"https://www.buenosaires.gob.ar", "Bs.As. Web oficial", "Ejemplo de contenido relacionado externo"],
+          /**/[26,30,"https://cloud-media-selector.herokuapp.com/?param1=Video_5", "Ir a Video 5", "Ejemplo de contenido relacionado de la misma webapp"],
+          /**/[36,44,"https://fi.uba.ar", "Uba, web oficial", "Otro ejemplo de contenido relacionado externo"],
+          /**/[13,18,"https://cloud-media-selector.herokuapp.com/?param1=Video1", "Super Agente 86", "Lo mejor del agente 13.."]
         ]
       );
      //bot.debug();
